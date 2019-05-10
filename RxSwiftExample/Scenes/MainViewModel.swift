@@ -36,9 +36,9 @@ extension MainViewModel: ViewModelType {
         let repos = input.loadTrigger
             .flatMapLatest { _ in
                 return self.useCase.getRepos()
-                    .trackActivity(indicator)
-                    .trackError(error)
-                    .asDriverOnErrorJustComplete()
+                .trackActivity(indicator)
+                .trackError(error)
+                .asDriverOnErrorJustComplete()
         }
         
         let selected = input.selectTrigger
@@ -46,7 +46,7 @@ extension MainViewModel: ViewModelType {
                 return repos[indexPath.row]
             }
             .do(onNext: { repo in
-                //self.navigator.toRepoDetail(githubRepo: repo)
+                self.navigator.toRepoDetail(githubRepo: repo)
             })
             .mapToVoid()
         

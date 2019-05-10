@@ -19,13 +19,5 @@ struct MainNavigator: MainNavigatorType {
     unowned let navigationController: UINavigationController
     
     func toRepoDetail(githubRepo: GithubRepo) {
-        //let viewController = RepoDetailViewController.instantiate()
-        //let useCase = RepoDetailUseCase()//
-       // let navigator = RepoDetailNavigator(navigationController: navigationController)
-       // let viewModel = RepoDetailViewModel(navigator: navigator,
-//                                            useCase: useCase,
-//                                            repo: githubRepo)
-//        viewController.bindViewModel(to: viewModel)
-//        navigationController.pushViewController(viewController, animated: true)
     }
 }

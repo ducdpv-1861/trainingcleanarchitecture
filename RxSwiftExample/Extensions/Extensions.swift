@@ -11,11 +11,12 @@ import RxCocoa
 import RxSwift
 import MBProgressHUD
 
+
 extension Reactive where Base: UIViewController {
     
     var error: Binder<Error> {
         return Binder(base) { viewController, error in
-            //viewController.showError(error.localizedDescription)
+            viewController.showError(message: error.localizedDescription)
         }
     }
     
@@ -29,6 +30,6 @@ extension Reactive where Base: UIViewController {
             }
         }
     }
+    
 }
-
 
