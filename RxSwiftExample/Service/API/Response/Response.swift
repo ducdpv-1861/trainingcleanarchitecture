@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-final class GithubRepoResponse : Mappable {
+final class GithubRepoResponse: Mappable {
     var githubRepos = [GithubRepo]()
     
     required init(map: Map) {
