@@ -12,7 +12,7 @@ import SDWebImage
 
 class RepoTableViewCell: UITableViewCell, NibReusable {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak private var avatarImageView: UIImageView!
     @IBOutlet weak var starCountLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
