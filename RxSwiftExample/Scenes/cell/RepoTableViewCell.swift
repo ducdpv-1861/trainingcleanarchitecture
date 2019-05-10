@@ -13,8 +13,8 @@ import SDWebImage
 class RepoTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet weak private var avatarImageView: UIImageView!
-    @IBOutlet weak var starCountLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak private var starCountLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -16,7 +16,7 @@ import Reusable
 
 class MainViewController: UIViewController, BindableType {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
     
     var viewModel: MainViewModel!
     private let firstLoadTrigger = PublishSubject<String>()
