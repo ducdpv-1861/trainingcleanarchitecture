@@ -66,6 +66,3 @@ class MainViewController: UIViewController, BindableType {
 extension MainViewController: StoryboardSceneBased {
     static var sceneStoryboard = StoryBoards.main
 }
-
-
-

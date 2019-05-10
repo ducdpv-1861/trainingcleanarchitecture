@@ -51,8 +51,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="c3s-lH-wXR" id="aTe-52-Hey"/>
-                <outlet property="lbStarCount" destination="jQJ-aw-WOC" id="IXn-Id-lCm"/>
                 <outlet property="nameLabel" destination="zRJ-TJ-zhv" id="FTN-HC-jyF"/>
+                <outlet property="starCountLabel" destination="jQJ-aw-WOC" id="IXn-Id-lCm"/>
             </connections>
             <point key="canvasLocation" x="88.799999999999997" y="21.589205397301352"/>
         </tableViewCell>
