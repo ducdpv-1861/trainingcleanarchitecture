@@ -12,8 +12,9 @@ import RxCocoa
 import Then
 import MGArchitecture
 import NSObject_Rx
+import Reusable
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, BindableType {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,17 +24,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        
-        enum MyError: Error {
-            case error1
-        }
-    
-        print("test change")
     }
     
-    
     private func configView() {
-
         tableView.do {
             $0.register(cellType: RepoTableViewCell.self)
             $0.rowHeight = 80
@@ -61,13 +54,17 @@ class MainViewController: UIViewController {
             .disposed(by: rx.disposeBag)
         
         output.indicator
-            //.drive(rx.isLoading)
-            //.disposed(by: rx.disposeBag)
+            .drive(rx.isLoading)
+            .disposed(by: rx.disposeBag)
         
         output.error
-            //.drive(rx.error)
-            //.disposed(by: rx.disposeBag)
+            .drive(rx.error)
+            .disposed(by: rx.disposeBag)
     }
+}
+
+extension MainViewController: StoryboardSceneBased {
+    static var sceneStoryboard = StoryBoards.main
 }
 
 

@@ -46,7 +46,7 @@ extension MainViewModel: ViewModelType {
                 return repos[indexPath.row]
             }
             .do(onNext: { repo in
-                self.navigator.toRepoDetail(githubRepo: repo)
+                //self.navigator.toRepoDetail(githubRepo: repo)
             })
             .mapToVoid()
         

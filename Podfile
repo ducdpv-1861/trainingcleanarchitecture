@@ -18,6 +18,8 @@ target 'RxSwiftExample' do
   pod 'Reusable', '4.0.4'
   pod 'Then', '2.4'
   pod 'SDWebImage'
+  #
+  pod 'MBProgressHUD'
 
   target 'RxSwiftExampleTests' do
     inherit! :search_paths

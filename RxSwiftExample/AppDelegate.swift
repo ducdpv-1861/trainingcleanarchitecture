@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        bindViewModel()
         return true
     }
+    
+    private func bindViewModel() {
+        guard let window = window else { return }
+        let navigator = AppNavigator(window: window)
+        let useCase = AppUseCase()
+        let viewModel = AppViewModel(navigator: navigator, useCase: useCase)
+        
+        let input = AppViewModel.Input(loadTrigger: Driver.just(()))
+        let output = viewModel.transform(input)
+        output.toMain
+            .drive()
+            .disposed(by: rx.disposeBag)
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
