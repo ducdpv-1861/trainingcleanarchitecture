@@ -13,7 +13,7 @@ import Then
 import MGArchitecture
 import NSObject_Rx
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     
     private func configView() {
-        title = "Gitgub"
+
         tableView.do {
             $0.register(cellType: RepoTableViewCell.self)
             $0.rowHeight = 80

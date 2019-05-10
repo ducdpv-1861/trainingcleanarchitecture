@@ -10,7 +10,7 @@ import UIKit
 import Reusable
 import SDWebImage
 
-class RepoTableViewCell: UITableViewCell,NibReusable {
+class RepoTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var lbStarCount: UILabel!
