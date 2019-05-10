@@ -20,6 +20,7 @@ target 'RxSwiftExample' do
   pod 'Then', '2.4'
 #  pod 'MJRefresh', '3.1'
 #  pod 'Validator', '3.0.2'
+  pod 'SDWebImage'
 
   target 'RxSwiftExampleTests' do
     inherit! :search_paths

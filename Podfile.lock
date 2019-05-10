@@ -37,6 +37,9 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
+  - SDWebImage (5.0.2):
+    - SDWebImage/Core (= 5.0.2)
+  - SDWebImage/Core (5.0.2)
   - Then (2.4.0)
 
 DEPENDENCIES:
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - "NSObject+Rx (= 4.4)"
   - Reusable (= 4.0.4)
   - RxDataSources (= 3.1)
+  - SDWebImage
   - Then (= 2.4)
 
 SPEC REPOS:
@@ -64,6 +68,7 @@ SPEC REPOS:
     - RxCocoa
     - RxDataSources
     - RxSwift
+    - SDWebImage
     - Then
 
 SPEC CHECKSUMS:
@@ -81,8 +86,9 @@ SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: 9bdd002dd411e68bafd69caec2595799c207e3c4
+PODFILE CHECKSUM: deeea402994f9702e275b7e514c074b8e793623c
 
 COCOAPODS: 1.6.1

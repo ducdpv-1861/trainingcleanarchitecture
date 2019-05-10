@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Then
+import MGArchitecture
+import NSObject_Rx
 
 class ViewController: UIViewController {
     
@@ -39,9 +41,34 @@ class ViewController: UIViewController {
     }
     
     func bindViewModel() {
-        let input = MainViewModel.Input()
-        let _ = viewModel.transform(input)
+        let input = MainViewModel.Input(
+            loadTrigger: Driver.just(()),
+            selectTrigger: tableView.rx.itemSelected.asDriver()
+        )
+        let output = viewModel.transform(input)
+        
+        output.repos
+            .drive(tableView.rx.items) { tableView, index, repo in
+                let indexPath = IndexPath(item: index, section: 0)
+                let cell: RepoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+                cell.setContentForCell(repo)
+                return cell
+            }
+            .disposed(by: rx.disposeBag)
+        
+        output.selected
+            .drive()
+            .disposed(by: rx.disposeBag)
+        
+        output.indicator
+            //.drive(rx.isLoading)
+            //.disposed(by: rx.disposeBag)
+        
+        output.error
+            //.drive(rx.error)
+            //.disposed(by: rx.disposeBag)
     }
-
 }
+
+
 
