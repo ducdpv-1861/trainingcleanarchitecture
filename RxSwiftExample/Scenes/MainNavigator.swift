@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol MainNavigatorType {
     func toRepoDetail(githubRepo: GithubRepo)

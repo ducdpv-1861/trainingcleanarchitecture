@@ -26,12 +26,6 @@ struct APIService {
     }
     
     func request<T: Mappable>(input: BaseRequest) ->  Observable<T> {
-        
-        //        print("\n------------REQUEST INPUT")
-        //        print("link: %@", input.url)
-        //        print("body: %@", input.body ?? "No Body")
-        //        print("------------ END REQUEST INPUT\n")
-        
         return Observable.create { observer in
             self.alamofireManager.request(input.url, method: input.requestType,
                                           parameters: input.body, encoding: input.encoding)
@@ -45,19 +39,19 @@ struct APIService {
                                     observer.onNext(object)
                                 }
                             } else {
-//                                if let object = Mapper<ErrorResponse>().map(JSONObject: value) {
-//                                    observer.onError(BaseError.apiFailure(error: object))
-//                                } else {
-//                                    observer.onError(BaseError.httpError(httpCode: statusCode))
-//                                }
+                                if let object = Mapper<ErrorResponse>().map(JSONObject: value) {
+                                    observer.onError(BaseError.apiFailure(error: object))
+                                } else {
+                                    observer.onError(BaseError.httpError(httpCode: statusCode))
+                                }
                             }
                         } else {
-                            //observer.on(.error(BaseError.unexpectedError))
+                            observer.on(.error(BaseError.unexpectedError))
                         }
                         observer.onCompleted()
                         
                     case .failure:
-                        //observer.onError(BaseError.networkError)
+                        observer.onError(BaseError.networkError)
                         observer.onCompleted()
                     }
             }

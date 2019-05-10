@@ -15,11 +15,11 @@ target 'RxSwiftExample' do
   pod 'RxDataSources', '3.1'
   
   # Core
-#  pod 'ObjectMapper', '3.3'
   pod 'Reusable', '4.0.4'
   pod 'Then', '2.4'
-#  pod 'MJRefresh', '3.1'
-#  pod 'Validator', '3.0.2'
+  pod 'SDWebImage'
+  #
+  pod 'MBProgressHUD'
 
   target 'RxSwiftExampleTests' do
     inherit! :search_paths

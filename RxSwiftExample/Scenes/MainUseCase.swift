@@ -17,7 +17,8 @@ protocol MainUseCaseType {
 struct MainUseCase: MainUseCaseType {
     
     func getRepos() -> Observable<[GithubRepo]> {
-        
-        return Observable.just([])
+        let request = GithubRepoRequest(page: 1)
+        let repository = GithubRepoRepository()
+        return repository.getGithubRepos(input: request)
     }
 }

@@ -10,6 +10,5 @@ import Foundation
 
 struct URLs {
     private static var APIBaseUrl = "https://api.github.com"
-    
     public static let githubRepo = APIBaseUrl + "/search/repositories"
 }
